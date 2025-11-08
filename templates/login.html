@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <h2>Voter Login</h2>
+        <form method="POST">
+            <div class="form-group">
+                <label for="voter_id">Voter ID:</label>
+                <input type="text" id="voter_id" name="voter_id" required 
+                       placeholder="Enter your Voter ID (e.g., V001)">
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Login to Vote</button>
+        </form>
+        
+        <div class="auth-info">
+            <h4>Sample Voter IDs for Testing:</h4>
+            <ul>
+                <li>V001</li>
+                <li>V002</li>
+                <li>V003</li>
+                <li>V004</li>
+                <li>V005</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

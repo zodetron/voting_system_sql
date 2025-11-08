@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="results-container">
+    <h2>Election Results</h2>
+    <p class="total-votes">Total Votes Cast: {{ total_votes }}</p>
+    
+    <div class="results-list">
+        {% for candidate in candidates %}
+        <div class="result-item">
+            <div class="candidate-info">
+                <h3>{{ candidate.name }}</h3>
+                <p class="party">{{ candidate.party }}</p>
+            </div>
+            <div class="vote-info">
+                <span class="vote-count">{{ candidate.votes }} votes</span>
+                {% if total_votes > 0 %}
+                <div class="vote-bar">
+                    <div class="vote-progress" 
+                         style="width: {{ (candidate.votes / total_votes * 100) | round(1) }}%">
+                    </div>
+                </div>
+                <span class="vote-percentage">
+                    {{ ((candidate.votes / total_votes * 100) | round(1)) if total_votes > 0 else 0 }}%
+                </span>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    
+    <div class="results-actions">
+        <a href="{{ url_for('index') }}" class="btn btn-primary">Back to Home</a>
+    </div>
+</div>
+{% endblock %}

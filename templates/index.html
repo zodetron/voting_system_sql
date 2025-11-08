@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero">
+    <div class="hero-content">
+        <h1>Welcome to the Online Voting System</h1>
+        <p>Exercise your right to vote securely and conveniently</p>
+        <div class="hero-buttons">
+            <a href="{{ url_for('login') }}" class="btn btn-primary">Cast Your Vote</a>
+            <a href="{{ url_for('results') }}" class="btn btn-secondary">View Results</a>
+        </div>
+    </div>
+</div>
+
+<div class="features">
+    <div class="feature-card">
+        <h3>Secure Voting</h3>
+        <p>One vote per verified voter with complete anonymity</p>
+    </div>
+    <div class="feature-card">
+        <h3>Real-time Results</h3>
+        <p>View live voting results after casting your vote</p>
+    </div>
+    <div class="feature-card">
+        <h3>Easy to Use</h3>
+        <p>Simple and intuitive interface for all voters</p>
+    </div>
+</div>
+{% endblock %}
